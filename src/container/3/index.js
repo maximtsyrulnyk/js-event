@@ -23,6 +23,11 @@ document.addEventListener('fullscreenerror', (e) => {
 
 // Обробник натискання на кнопку повноекранного режиму
 button.addEventListener('click', () => {
+  if (document.fullscreenElement) {
+    if (document.exitFullscreen) {
+      document.exitFullscreen()
+    }
+  }
   const body = document.documentElement
   if (body.requestFullscreen) {
     body.requestFullscreen()
